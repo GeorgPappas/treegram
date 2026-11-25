@@ -1,0 +1,19 @@
+%h1 All Registered Users
+
+- if @current_user
+  = link_to 'Back to My Profile', user_path(@current_user), class: ['btn', 'btn-default']
+
+%br/
+%br/
+
+%ul.list-group
+  - @users.each do |user|
+    - unless @current_user && user.id == @current_user.id
+      %li.list-group-item
+        = user.email
+        - if @current_user
+          - follow = @current_user.follows_given.find_by(followed_id: user.id)
+          - if follow
+            = button_to 'Unfollow', follow_path(follow), method: :delete, class: ['btn', 'btn-warning', 'btn-sm']
+          - else
+            = button_to 'Follow', follows_path(followed_id: user.id), method: :post, class: ['btn', 'btn-primary', 'btn-sm']
