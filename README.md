@@ -64,5 +64,5 @@ MIT license
 
 1. Κατεβάστε το αποθετήριο:
    ```bash
-   git clone [https://github.com/to-username-sou/treegram.git](https://github.com/GeorgePapp/treegram.git)
+   git clone [https://github.com/to-username-sou/treegram.git](https://github.com/GeorgPappas/treegram.git)
    cd treegram
